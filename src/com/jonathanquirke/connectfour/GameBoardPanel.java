@@ -2,6 +2,7 @@ package com.jonathanquirke.connectfour;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 class GameBoardPanel extends PaneDecorator {
     private GUI gui;
@@ -28,13 +29,27 @@ class GameBoardPanel extends PaneDecorator {
 
     private void createBoard(JPanel gameBoard)
     {
+        Random r = new Random();
+        int low = 0;
+        int high = 3;
+        int result;
+
         JLabel[][] pieces = new JLabel[6][7];
         ImageIcon empty = new ImageIcon("./images/empty100.png");
+        ImageIcon redPiece = new ImageIcon("./images/redPiece100.png");
+        ImageIcon yellowPiece = new ImageIcon("./images/yellowPiece100.png");
+
+        ImageIcon[] icons = new ImageIcon[3];
+        icons[0] = empty;
+        icons[1] = redPiece;
+        icons[2] = yellowPiece;
+
         for (int i = 5; i >= 0; i--)
         {
             for (int j = 0; j < 7; j++)
             {
-                pieces[i][j] = new JLabel(empty);
+                result = r.nextInt(high-low) + low;
+                pieces[i][j] = new JLabel(icons[result]);
                 gameBoard.add(pieces[i][j]);
             }
         }

@@ -1,5 +1,7 @@
 package com.jonathanquirke.connectfour;
 
+import javax.swing.*;
+
 public class TestMain {
 
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class TestMain {
         test = new SideMenu(test);
         test = new PlayerInformationPanel(test);
         test = new GameBoardPanel(test);
-        test.frameShow(test.getFrame());
+        JFrame frame = test.getFrame();
+        test.frameShow(frame);
     }
 
 
