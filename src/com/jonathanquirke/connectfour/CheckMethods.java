@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 
 
-public class CheckMethods extends Computer {
+public class CheckMethods{
 
     public static int[][] playerCheck (int[][] board,int column,int player)
     {

@@ -5,6 +5,9 @@ import java.awt.*;
 
 class SideMenu extends PaneDecorator{
     private GUI gui;
+    private JButton newGame;
+    private JButton newPlayer;
+    private JButton highScore;
 
     SideMenu(GUI gui) {
         this.gui = gui;
@@ -15,11 +18,23 @@ class SideMenu extends PaneDecorator{
         return frame = createPane(gui.getFrame());
     }
 
+    void addHighScoreActionListener(ActionHandler actionHandler){
+        highScore.addActionListener(actionHandler);
+    }
+
+    void addNewPlayerActionListener(ActionHandler actionHandler){
+        newPlayer.addActionListener(actionHandler);
+    }
+
+    void addNewGameActionListener(ActionHandler actionHandler) {
+        newGame.addActionListener(actionHandler);
+    }
+
     @Override
     JFrame createPane(JFrame frame) {
-        JButton newGame = new JButton("New Game");
-        JButton newPlayer = new JButton("New Player");
-        JButton highScore = new JButton("High Score");
+        newGame = new JButton("New Game");
+        newPlayer = new JButton("New Player");
+        highScore = new JButton("High Score");
         GridLayout menuGrid = new GridLayout(4, 1);
         Dimension scoreSize = new Dimension(100, 700);
         JPanel menuButtons = new JPanel(menuGrid);
