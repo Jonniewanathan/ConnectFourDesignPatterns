@@ -54,29 +54,5 @@ class PlayerInformationPanel extends PaneDecorator {
         score.add(p2Loses);
         score.setPreferredSize(scoreSize);
         return score;
-
-//        pName.setText("Name: " + p1.getName());
-//        pWin.setText("Win: " + Integer.toString(p1.getWin()));
-//        pLoses.setText("Loses: " + Integer.toString(p1.getLoses()));
-//        pWin.repaint();
-//        pLoses.repaint();
-//        if(numPlayers == JOptionPane.YES_OPTION)
-//        {
-//            p2Name.setText("Name: " + p2.getName());
-//            p2Win.setText("Win: " + Integer.toString(p2.getWin()));
-//            p2Loses.setText("Loses: " + Integer.toString(p2.getLoses()));
-//            p2Win.repaint();
-//            p2Loses.repaint();
-//        }
-//        else if(numPlayers == JOptionPane.NO_OPTION)
-//        {
-//            players.remove(0);
-//            players.add(0,comp);
-//            p2Name.setText("Name: " + comp.getName());
-//            p2Win.setText("Win: " + Integer.toString(comp.getWin()));
-//            p2Loses.setText("Loses: " + Integer.toString(comp.getLoses()));
-//            p2Win.repaint();
-//            p2Loses.repaint();
-//        }
     }
 }
