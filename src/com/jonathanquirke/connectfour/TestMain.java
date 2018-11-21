@@ -13,6 +13,7 @@ public class TestMain {
         test = new MenuBar(test);
         MenuBar menuBar = (MenuBar) test;
         test = new ColumnButtons(test);
+        ColumnButtons columnButtons = (ColumnButtons)test;
         test = new SideMenu(test);
         SideMenu sideMenu = (SideMenu)test;
         test = new PlayerInformationPanel(test);
@@ -24,6 +25,7 @@ public class TestMain {
         sideMenuHighScoreBehaviour(sideMenu);
         sideMenuNewPlayerBehaviour(sideMenu);
         sideMenuNewGameBehaviour(sideMenu);
+        columnButtons.addColumnButtonActionListener();
 
         test.frameShow(frame);
     }
