@@ -18,6 +18,8 @@ public class TestMain {
         SideMenu sideMenu = (SideMenu)test;
         test = new PlayerInformationPanel(test);
         test = new GameBoardPanel(test);
+        GameBoardPanel gameBoardPanel = (GameBoardPanel)test;
+
         JFrame frame = test.getFrame();
 
         menuBarHistoryBehaviour(menuBar);
@@ -26,6 +28,8 @@ public class TestMain {
         sideMenuNewPlayerBehaviour(sideMenu);
         sideMenuNewGameBehaviour(sideMenu);
         columnButtons.addColumnButtonActionListener();
+        columnButtons.setGameBoardPanel(gameBoardPanel);
+        gameBoardPanel.resetBoard();
 
         test.frameShow(frame);
     }
