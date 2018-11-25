@@ -277,7 +277,6 @@ public class CheckMethods implements Observer{
         if(win == 'Y')
         {
             JOptionPane.showMessageDialog(null,"Yellow Wins ");
-
         }
         if(win == 'R')
         {
