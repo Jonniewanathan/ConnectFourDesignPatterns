@@ -33,7 +33,7 @@ public class SideMenuNewGameBehaviour implements ActionBehaviour {
     private void resetBoard()
     {
         ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
-        connectFourBoard.ResetBoard();
+        connectFourBoard.resetBoard();
         connectFourBoard.notifyObservers();
     }
 

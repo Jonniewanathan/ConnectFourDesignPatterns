@@ -9,7 +9,7 @@ public class ConnectFourBoard implements Subject {
     private List<Observer> observers = new ArrayList<>();
 
     private ConnectFourBoard(){
-        ResetBoard();
+        resetBoard();
     }
 
     public static ConnectFourBoard getConnectFourBoard(){
@@ -19,19 +19,20 @@ public class ConnectFourBoard implements Subject {
         return connectFourBoard;
     }
 
-    public void ResetBoard(){
+    public void resetBoard(){
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 board[i][j] = 1;
             }
         }
+        this.notifyObservers();
     }
 
     public int[][] getBoard(){
         return board;
     }
 
-    public void AddPiece(int column, int player){
+    public void addPiece(int column, int player){
         boolean valid = false;
         int num = 0;
         int pieceNum = 0;
@@ -54,6 +55,7 @@ public class ConnectFourBoard implements Subject {
             }
             num++;
         }
+        this.notifyObservers();
     }
 
     @Override

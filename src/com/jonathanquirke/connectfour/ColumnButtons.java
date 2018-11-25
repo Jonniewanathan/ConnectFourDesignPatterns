@@ -75,7 +75,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 1");
             if(board[5][0] != 2 && board[5][0] != 3)
             {
-                connectFourBoard.AddPiece(0,playerNum);
+                connectFourBoard.addPiece(0,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
@@ -84,7 +84,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 2");
             if(board[5][1] != 2 && board[5][1] != 3)
             {
-                connectFourBoard.AddPiece(1,playerNum);
+                connectFourBoard.addPiece(1,playerNum);
                 connectFourBoard.notifyObservers();
             }
 
@@ -94,7 +94,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 3");
             if(board[5][2] != 2 && board[5][2] != 3)
             {
-                connectFourBoard.AddPiece(2,playerNum);
+                connectFourBoard.addPiece(2,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
@@ -103,7 +103,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 4");
             if(board[5][3] != 2 && board[5][3] != 3)
             {
-                connectFourBoard.AddPiece(3,playerNum);
+                connectFourBoard.addPiece(3,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
@@ -112,7 +112,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 5");
             if(board[5][4] != 2 && board[5][4] != 3)
             {
-                connectFourBoard.AddPiece(4,playerNum);
+                connectFourBoard.addPiece(4,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
@@ -121,7 +121,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 6");
             if(board[5][5] != 2 && board[5][5] != 3)
             {
-                connectFourBoard.AddPiece(5,playerNum);
+                connectFourBoard.addPiece(5,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
@@ -130,7 +130,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             System.out.println("This is 7");
             if(board[5][6] != 2 && board[5][6] != 3)
             {
-                connectFourBoard.AddPiece(6,playerNum);
+                connectFourBoard.addPiece(6,playerNum);
                 connectFourBoard.notifyObservers();
             }
         }
