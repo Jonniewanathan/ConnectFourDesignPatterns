@@ -66,15 +66,10 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
         }
     }
 
-    public void setGameBoardPanel(GameBoardPanel boardPanel){
-        gameBoardPanel = boardPanel;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
         int[][] board = connectFourBoard.getBoard();
-        connectFourBoard.registerObserver(gameBoardPanel);
         if(e.getSource() == colButtons[0])
         {
             System.out.println("This is 1");

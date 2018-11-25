@@ -28,7 +28,6 @@ public class TestMain {
         sideMenuNewPlayerBehaviour(sideMenu);
         sideMenuNewGameBehaviour(sideMenu);
         columnButtons.addColumnButtonActionListener();
-        columnButtons.setGameBoardPanel(gameBoardPanel);
         gameBoardPanel.resetBoard();
         ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
         connectFourBoard.registerObserver(gameBoardPanel);
