@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-class GameBoardPanel extends PaneDecorator implements Observer{
+class GameBoardPanel extends PaneDecorator implements BoardObserver {
     private GUI gui;
     private ImageIcon[] icons;
     private JLabel[][] pieces;

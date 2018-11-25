@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 
 
-public class CheckMethods implements Observer{
+public class CheckMethods implements BoardObserver {
 
     public static int[][] playerCheck (int[][] board,int column,int player)
     {
@@ -274,13 +274,16 @@ public class CheckMethods implements Observer{
     public void update(int[][] board) {
         char win;
         win = checkWin(board);
+        ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
         if(win == 'Y')
         {
             JOptionPane.showMessageDialog(null,"Yellow Wins ");
+            connectFourBoard.resetBoard();
         }
         if(win == 'R')
         {
             JOptionPane.showMessageDialog(null,"Red Wins");
+            connectFourBoard.resetBoard();
         }
     }
 }

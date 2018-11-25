@@ -6,7 +6,7 @@ import java.util.List;
 public class ConnectFourBoard implements Subject {
     private static ConnectFourBoard connectFourBoard;
     private int[][] board = new int[6][7];
-    private List<Observer> observers = new ArrayList<>();
+    private List<BoardObserver> boardObservers = new ArrayList<>();
 
     private ConnectFourBoard(){
         resetBoard();
@@ -59,21 +59,21 @@ public class ConnectFourBoard implements Subject {
     }
 
     @Override
-    public void registerObserver(Observer o) {
-        observers.add(o);
+    public void registerObserver(BoardObserver o) {
+        boardObservers.add(o);
     }
 
     @Override
-    public void removeObserver(Observer o) {
+    public void removeObserver(BoardObserver o) {
         if(o != null){
-            observers.remove(o);
+            boardObservers.remove(o);
         }
     }
 
     @Override
     public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(board);
+        for (BoardObserver boardObserver : boardObservers) {
+            boardObserver.update(board);
         }
 
     }

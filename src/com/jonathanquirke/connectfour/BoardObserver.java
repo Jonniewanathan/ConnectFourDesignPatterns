@@ -1,5 +1,5 @@
 package com.jonathanquirke.connectfour;
 
-public interface Observer {
+public interface BoardObserver {
     void update(int[][] board);
 }
