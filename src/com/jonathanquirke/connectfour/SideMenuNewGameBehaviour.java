@@ -32,16 +32,9 @@ public class SideMenuNewGameBehaviour implements ActionBehaviour {
 
     private void resetBoard()
     {
-        int[][] board = new int[6][7];
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 7; j++) {
-                if(board[i][j] != 1)
-                {
-                    board[i][j] = 1;
-                    //pieces[i][j].setIcon(empty);
-                }
-            }
-        }
+        ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
+        connectFourBoard.ResetBoard();
+        connectFourBoard.notifyObservers();
     }
 
     private void printPlayerList()

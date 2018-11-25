@@ -30,6 +30,9 @@ public class TestMain {
         columnButtons.addColumnButtonActionListener();
         columnButtons.setGameBoardPanel(gameBoardPanel);
         gameBoardPanel.resetBoard();
+        ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
+        connectFourBoard.registerObserver(gameBoardPanel);
+        connectFourBoard.registerObserver(new CheckMethods());
 
         test.frameShow(frame);
     }

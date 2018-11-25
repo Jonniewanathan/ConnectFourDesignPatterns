@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-class GameBoardPanel extends PaneDecorator {
+class GameBoardPanel extends PaneDecorator implements Observer{
     private GUI gui;
     private ImageIcon[] icons;
     private JLabel[][] pieces;
@@ -43,8 +43,8 @@ class GameBoardPanel extends PaneDecorator {
         ImageIcon yellowPiece = new ImageIcon("./images/yellowPiece100.png");
         icons = new ImageIcon[3];
         icons[0] = empty;
-        icons[1] = redPiece;
-        icons[2] = yellowPiece;
+        icons[1] = yellowPiece;
+        icons[2] = redPiece;
 
         for (int i = 5; i >= 0; i--)
         {
@@ -68,8 +68,9 @@ class GameBoardPanel extends PaneDecorator {
         }
     }
 
-    public void updateBoard(){
-        int[][] board = connectFourBoard.getBoard();
+
+    @Override
+    public void update(int[][] board) {
         for (int i = 5; i >= 0; i--)
         {
             for (int j = 0; j < 7; j++)
@@ -81,6 +82,9 @@ class GameBoardPanel extends PaneDecorator {
                     else if (board[i][j] == 3){
                         pieces[i][j].setIcon(icons[2]);
                     }
+                }
+                else {
+                    pieces[i][j].setIcon(icons[0]);
                 }
 
             }

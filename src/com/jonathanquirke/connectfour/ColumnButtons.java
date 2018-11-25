@@ -74,12 +74,14 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
         int[][] board = connectFourBoard.getBoard();
+        connectFourBoard.registerObserver(gameBoardPanel);
         if(e.getSource() == colButtons[0])
         {
             System.out.println("This is 1");
             if(board[5][0] != 2 && board[5][0] != 3)
             {
                 connectFourBoard.AddPiece(0,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         else if(e.getSource() == colButtons[1])
@@ -88,6 +90,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][1] != 2 && board[5][1] != 3)
             {
                 connectFourBoard.AddPiece(1,playerNum);
+                connectFourBoard.notifyObservers();
             }
 
         }
@@ -97,6 +100,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][2] != 2 && board[5][2] != 3)
             {
                 connectFourBoard.AddPiece(2,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         else if(e.getSource() == colButtons[3])
@@ -105,6 +109,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][3] != 2 && board[5][3] != 3)
             {
                 connectFourBoard.AddPiece(3,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         else if(e.getSource() == colButtons[4])
@@ -113,6 +118,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][4] != 2 && board[5][4] != 3)
             {
                 connectFourBoard.AddPiece(4,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         else if(e.getSource() == colButtons[5])
@@ -121,6 +127,7 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][5] != 2 && board[5][5] != 3)
             {
                 connectFourBoard.AddPiece(5,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         else if(e.getSource() == colButtons[6])
@@ -129,9 +136,10 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
             if(board[5][6] != 2 && board[5][6] != 3)
             {
                 connectFourBoard.AddPiece(6,playerNum);
+                connectFourBoard.notifyObservers();
             }
         }
         switchUsers();
-        gameBoardPanel.updateBoard();
+
     }
 }

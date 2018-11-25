@@ -1,8 +1,12 @@
 package com.jonathanquirke.connectfour;
 
-public class ConnectFourBoard {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConnectFourBoard implements Subject {
     private static ConnectFourBoard connectFourBoard;
     private int[][] board = new int[6][7];
+    private List<Observer> observers = new ArrayList<>();
 
     private ConnectFourBoard(){
         ResetBoard();
@@ -50,5 +54,25 @@ public class ConnectFourBoard {
             }
             num++;
         }
+    }
+
+    @Override
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+        if(o != null){
+            observers.remove(o);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(board);
+        }
+
     }
 }
