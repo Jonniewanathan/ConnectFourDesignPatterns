@@ -8,7 +8,6 @@ class GameBoardPanel extends PaneDecorator implements BoardObserver {
     private GUI gui;
     private ImageIcon[] icons;
     private JLabel[][] pieces;
-    private ConnectFourBoard connectFourBoard = ConnectFourBoard.getConnectFourBoard();
 
     GameBoardPanel(GUI gui) {
         this.gui = gui;
