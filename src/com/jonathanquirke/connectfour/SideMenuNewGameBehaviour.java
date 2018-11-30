@@ -13,6 +13,10 @@ public class SideMenuNewGameBehaviour implements ActionBehaviour {
     public void Action() {
         open();
         numPlayers = JOptionPane.showConfirmDialog(null,"2 Player?");
+        System.out.println(numPlayers);
+
+        Configuration.isComputer = numPlayers == 1;
+
         resetBoard();
         printPlayerList();
     }
