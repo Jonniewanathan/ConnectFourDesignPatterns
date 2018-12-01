@@ -36,24 +36,6 @@ public class CheckMethods implements BoardObserver {
 
         return board;
     }
-    public static void checkWinPane(int[][] board, Player player1, Player player2){
-        char win;
-
-        win = checkWin(board);
-        if(win == 'Y')
-        {
-            player1.setWin(1);
-            JOptionPane.showMessageDialog(null,"Yellow Wins ");
-            player2.setLoses(1);
-
-        }
-        if(win == 'R')
-        {
-            player2.setWin(1);
-            JOptionPane.showMessageDialog(null,"Red Wins");
-            player1.setLoses(1);
-        }
-    }
     public static char checkWin(int[][] board){
         char win;
 
@@ -278,11 +260,15 @@ public class CheckMethods implements BoardObserver {
         if(win == 'Y')
         {
             JOptionPane.showMessageDialog(null,"Yellow Wins ");
+            Configuration.p1.addWin();
+            Configuration.p2.addLose();
             connectFourBoard.resetBoard();
         }
         if(win == 'R')
         {
             JOptionPane.showMessageDialog(null,"Red Wins");
+            Configuration.p2.addWin();
+            Configuration.p1.addLose();
             connectFourBoard.resetBoard();
         }
     }

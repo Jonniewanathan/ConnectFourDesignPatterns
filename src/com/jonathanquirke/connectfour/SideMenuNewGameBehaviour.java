@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class SideMenuNewGameBehaviour implements ActionBehaviour {
-    private ArrayList<Player> players = new ArrayList();
+    private ArrayList<AbstractPlayer> players = new ArrayList<>();
     private int numPlayers;
 
     @Override
@@ -25,7 +25,7 @@ public class SideMenuNewGameBehaviour implements ActionBehaviour {
         try{
             ObjectInputStream is;
             is = new ObjectInputStream(new FileInputStream("Player.dat"));
-            players  = (ArrayList<Player>) is.readObject();
+            players  = (ArrayList<AbstractPlayer>) is.readObject();
             is.close();
         }
         catch(Exception e){

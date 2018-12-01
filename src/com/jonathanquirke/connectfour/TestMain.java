@@ -17,6 +17,7 @@ public class TestMain {
         test = new SideMenu(test);
         SideMenu sideMenu = (SideMenu)test;
         test = new PlayerInformationPanel(test);
+        Configuration.panel = (PlayerInformationPanel) test;
         test = new GameBoardPanel(test);
         GameBoardPanel gameBoardPanel = (GameBoardPanel)test;
 

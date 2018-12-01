@@ -3,8 +3,14 @@ package com.jonathanquirke.connectfour;
 import javax.swing.*;
 import java.awt.*;
 
-class PlayerInformationPanel extends PaneDecorator {
+class PlayerInformationPanel extends PaneDecorator implements PlayerObserver {
     private GUI gui;
+    JLabel pName;
+    JLabel p2Name;
+    JLabel pWin;
+    JLabel p2Win;
+    JLabel pLoses;
+    JLabel p2Loses;
 
     PlayerInformationPanel(GUI gui) {
         this.gui = gui;
@@ -24,12 +30,12 @@ class PlayerInformationPanel extends PaneDecorator {
 
     private JPanel getScores()
     {
-        JLabel pName = new JLabel();
-        JLabel p2Name = new JLabel();
-        JLabel pWin = new JLabel();
-        JLabel p2Win = new JLabel();
-        JLabel pLoses = new JLabel();
-        JLabel p2Loses = new JLabel();
+        pName = new JLabel();
+        p2Name = new JLabel();
+        pWin = new JLabel();
+        p2Win = new JLabel();
+        pLoses = new JLabel();
+        p2Loses = new JLabel();
 
         pName.setText("Name: ");
         pWin.setText("Win: ");
@@ -54,5 +60,20 @@ class PlayerInformationPanel extends PaneDecorator {
         score.add(p2Loses);
         score.setPreferredSize(scoreSize);
         return score;
+    }
+
+    @Override
+    public void update(AbstractPlayer o) {
+        pName.setText("Name: " + o.getName());
+        pWin.setText("Win: " + o.getWin());
+        pLoses.setText("Loses: " + o.getLoses());
+        pWin.repaint();
+        pLoses.repaint();
+
+        p2Name.setText("Name: ");
+        p2Win.setText("Win: ");
+        p2Loses.setText("Loses: ");
+        p2Win.repaint();
+        p2Loses.repaint();
     }
 }

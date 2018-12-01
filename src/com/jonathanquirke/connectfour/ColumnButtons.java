@@ -128,7 +128,8 @@ class ColumnButtons extends PaneDecorator implements ActionListener {
         }
         switchUsers();
         if(Configuration.isComputer){
-            connectFourBoard.addPiece(computer.play(), Configuration.playerNum);
+            AbstractPlay play = new EasyComputer();
+            computer.play(play);
             switchUsers();
         }
 

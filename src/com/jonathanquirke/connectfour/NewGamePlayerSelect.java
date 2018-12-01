@@ -11,10 +11,10 @@ public class NewGamePlayerSelect implements ActionListener {
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBox2;
     private int numPlayers;
-    private ArrayList<Player> players;
-    JFrame playerListFrame;
+    private ArrayList<AbstractPlayer> players;
+    private JFrame playerListFrame;
 
-    public void createGUI(ArrayList<Player> players, int numPlayers){
+    public void createGUI(ArrayList<AbstractPlayer> players, int numPlayers){
         this.numPlayers = numPlayers;
         this.players = players;
         int num = 1;
@@ -45,27 +45,31 @@ public class NewGamePlayerSelect implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int pNumber = (1 + comboBox.getSelectedIndex());
         int p2Number = (1 + comboBox2.getSelectedIndex());
-        Player p1;
-        Player p2;
-        Player temp;
-        Computer comp = new Computer();
-        boolean computer;
+        AbstractPlayer p1;
+        AbstractPlayer p2;
         if(numPlayers == JOptionPane.YES_OPTION)
         {
-            computer = false;
+            Configuration.isComputer = false;
             p1 = players.get(pNumber);
             p2 = players.get(p2Number);
+            Configuration.p1 = p1;
+            Configuration.p2 = p2;
+            p1.registerObserver(Configuration.panel);
+            p2.registerObserver(Configuration.panel);
+            p1.notifyObservers();
+            p2.notifyObservers();
         }
         else if(numPlayers == JOptionPane.NO_OPTION)
         {
-            computer = true;
+            Configuration.isComputer = true;
             p1 = players.get(pNumber);
-            temp = players.get(0);
-            int compWin = temp.getWin();
-            int compLose = temp.getLoses();
-            comp.setExactWin(compWin);
-            comp.setExactLose(compLose);
-
+            p2 = new Computer();
+            Configuration.p1 = p1;
+            Configuration.p2 = p2;
+            p1.registerObserver(Configuration.panel);
+            p2.registerObserver(Configuration.panel);
+            p1.notifyObservers();
+            p2.notifyObservers();
         }
         playerListFrame.dispose();
     }
